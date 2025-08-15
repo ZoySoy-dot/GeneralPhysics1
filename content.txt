@@ -1,0 +1,636 @@
+---TOPIC---
+home|Home|home
+<h2>Welcome to the General Physics 1 Learning Hub!</h2>
+<p>Hello Renz! Think of this website as your personal guide to understanding the world around you. Physics isn't just about complicated formulas; it's the rulebook for everything, from a basketball's arc to the orbit of the Moon.</p>
+<p class="mt-4">This course, General Physics 1, is all about <strong>mechanics</strong> and <strong>thermodynamics</strong>. We'll build your intuition for how things move, why they move, and how energy flows through the universe. By the end, you'll see physics in action everywhere you look.</p>
+<h3>How to Use This Site</h3>
+<p>Use the menu on the left to jump between topics. Each section breaks down the big ideas, shows you the key formulas, and gives you different ways to think about the concepts. The goal isn't just to memorize, but to truly understand.</p>
+<p class="mt-4">Let's start building your physics intuition!</p>
+
+---TOPIC---
+vectors|Units, Quantities & Vectors|move-3d
+<h2>Units, Physical Quantities, and Vectors</h2>
+<p>Physics describes the universe with measurements. But a number by itself is meaningless. Is it 5 feet, 5 kilograms, or 5 seconds? And which way is it going? This is where we learn to speak the language of physics clearly.</p>
+
+<div class="video-container">
+    <iframe src="https://www.youtube.com/embed/ml4NSzCQobk" title="Introduction to Vectors - Khan Academy"></iframe>
+</div>
+
+<h3>Understanding the SI System</h3>
+<p>The <strong>International System of Units (SI)</strong> provides a universal language for science. All physical quantities can be expressed using seven fundamental base units:</p>
+<div class="topic-grid">
+    <div class="grid-item">
+        <h4>Base SI Units</h4>
+        <ul class="list-disc list-inside">
+            <li><strong>Length:</strong> meter (m)</li>
+            <li><strong>Mass:</strong> kilogram (kg)</li>
+            <li><strong>Time:</strong> second (s)</li>
+            <li><strong>Electric Current:</strong> ampere (A)</li>
+            <li><strong>Temperature:</strong> kelvin (K)</li>
+            <li><strong>Amount of Substance:</strong> mole (mol)</li>
+            <li><strong>Luminous Intensity:</strong> candela (cd)</li>
+        </ul>
+    </div>
+    <div class="grid-item">
+        <h4>Common Derived Units</h4>
+        <ul class="list-disc list-inside">
+            <li><strong>Force:</strong> newton (N = kg⋅m/s²)</li>
+            <li><strong>Energy:</strong> joule (J = N⋅m)</li>
+            <li><strong>Power:</strong> watt (W = J/s)</li>
+            <li><strong>Pressure:</strong> pascal (Pa = N/m²)</li>
+            <li><strong>Frequency:</strong> hertz (Hz = 1/s)</li>
+        </ul>
+    </div>
+</div>
+
+<h3>Keywords & Key Variables</h3>
+<div class="topic-grid">
+    <div class="grid-item">
+        <h4>Keywords</h4>
+        <ul class="list-disc list-inside">
+            <li><strong>Scalar:</strong> A quantity that only has a size (magnitude). Examples: 10 kg, 30°C, 5 meters.</li>
+            <li><strong>Vector:</strong> A quantity with both size AND direction. Examples: 5 meters <strong>to the East</strong>, 20 m/s <strong>upward</strong>.</li>
+            <li><strong>Magnitude:</strong> The "how much" part of a vector (its size or length).</li>
+            <li><strong>Component:</strong> Think of this as a vector's "shadow" on an axis. We split a vector into its x- and y-parts to make the math easier.</li>
+            <li><strong>Resultant:</strong> The final vector you get after adding two or more vectors together.</li>
+            <li><strong>Unit Vector:</strong> A vector with magnitude 1 that points in a specific direction (like <span class="formula-highlight">î</span>, <span class="formula-highlight">ĵ</span>, <span class="formula-highlight">k̂</span>).</li>
+        </ul>
+    </div>
+    <div class="grid-item">
+        <h4>Key Variables</h4>
+        <ul class="list-disc list-inside">
+            <li>$\\vec{A}, \\vec{B}$: The arrow means it's a vector.</li>
+            <li>$|\\vec{A}|$: The magnitude (size) of vector A.</li>
+            <li>$A_x, A_y$: The x-component and y-component of vector A.</li>
+            <li>$\\theta$: The angle that specifies the vector's direction.</li>
+            <li>$\\vec{R}$: The resultant vector (the sum).</li>
+            <li>$\\hat{i}, \\hat{j}, \\hat{k}$: Unit vectors in x, y, and z directions.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="interactive-demo">
+    <h4><i data-lucide="play-circle"></i>Interactive Vector Addition Demo</h4>
+    <p>Click and drag to create vectors, then see their sum!</p>
+    <div class="canvas-container">
+        <canvas id="vectorCanvas" width="400" height="300" style="border: 2px solid var(--accent-blue); border-radius: 0.5rem; background-color: var(--bg-dark);"></canvas>
+    </div>
+    <div class="demo-controls">
+        <button class="demo-button" onclick="clearVectors()">Clear</button>
+        <button class="demo-button" onclick="showComponents()">Show Components</button>
+        <button class="demo-button" onclick="showResultant()">Show Resultant</button>
+    </div>
+</div>
+
+<h3>Vector Operations by Components</h3>
+<p>To break a vector down into its x and y components (its "shadows" on the axes), we use some simple trigonometry:</p>
+$$ A_x = |\\vec{A}| \\cos(\\theta) \\quad , \\quad A_y = |\\vec{A}| \\sin(\\theta) $$
+<p>The beauty of components is that they make vector addition simple. Instead of complicated geometry, you just add the x-parts together and the y-parts together:</p>
+$$ R_x = A_x + B_x \\quad , \\quad R_y = A_y + B_y $$
+<p>Once you have the resultant's components ($R_x, R_y$), you can put them back together to find its overall magnitude and direction using the Pythagorean theorem and arctangent:</p>
+$$ |\\vec{R}| = \\sqrt{R_x^2 + R_y^2} \\quad , \\quad \\theta_R = \\tan^{-1}\\left(\\frac{R_y}{R_x}\\right) $$
+
+<div class="example-box">
+    <h4><i data-lucide="lightbulb"></i>Real-World Example: GPS Navigation</h4>
+    <p>When your GPS tells you to "go 2 miles northeast," it's using vector addition! The GPS breaks your journey into components:</p>
+    <ul class="list-disc list-inside ml-4">
+        <li><strong>Eastward component:</strong> 2 × cos(45°) = 1.41 miles east</li>
+        <li><strong>Northward component:</strong> 2 × sin(45°) = 1.41 miles north</li>
+    </ul>
+    <p>Your phone's accelerometer and compass work together to track your position vector in real-time, constantly updating your location by adding displacement vectors!</p>
+</div>
+
+<div class="info-box advanced-box">
+    <h4><i data-lucide="brain-circuit"></i>Advanced Learning: The Dot and Cross Products</h4>
+    <p class="mt-2">Besides adding, there are two special ways to multiply vectors:</p>
+    <p><strong>1. The Dot Product (Scalar Product):</strong> This tells you how much two vectors align or point in the same direction. The result is just a number (a scalar), not a new vector. It's perfect for calculating <strong>Work</strong>, which depends on how much a force is aligned with the direction of motion.</p>
+    $$ \\vec{A} \\cdot \\vec{B} = |\\vec{A}| |\\vec{B}| \\cos(\\theta) = A_x B_x + A_y B_y + A_z B_z $$
+    <p><strong>Physical interpretation:</strong> If θ = 0° (parallel), dot product is maximum. If θ = 90° (perpendicular), dot product is zero.</p>
+    <p><strong>2. The Cross Product (Vector Product):</strong> This tells you how much "twist" or "leverage" one vector has on another. The result is a brand new vector that points perpendicular to the two original vectors. This is essential for understanding things that rotate, like calculating <strong>Torque</strong> (the rotational equivalent of force).</p>
+    $$ |\\vec{A} \\times \\vec{B}| = |\\vec{A}| |\\vec{B}| \\sin(\\theta) $$
+    <p><strong>Direction rule:</strong> Use the right-hand rule - point fingers along first vector, curl toward second vector, thumb points in direction of cross product.</p>
+</div>
+
+<div class="practice-problem">
+    <h4><i data-lucide="brain"></i>Practice Problem</h4>
+    <p><strong>Problem:</strong> A hiker walks 3.0 km due north, then 4.0 km due east. What is the hiker's displacement from the starting point?</p>
+    <p><strong>Solution approach:</strong></p>
+    <ol class="list-decimal list-inside ml-4">
+        <li>Set up coordinate system (North = +y, East = +x)</li>
+        <li>Vector A: 3.0 km north = (0, 3.0) km</li>
+        <li>Vector B: 4.0 km east = (4.0, 0) km</li>
+        <li>Resultant R = A + B = (4.0, 3.0) km</li>
+        <li>Magnitude: |R| = √(4.0² + 3.0²) = 5.0 km</li>
+        <li>Direction: θ = tan⁻¹(3.0/4.0) = 36.9° north of east</li>
+    </ol>
+</div>
+
+<div class="learning-resources">
+    <h4><i data-lucide="book-open"></i>Additional Learning Resources</h4>
+    <div class="resource-links">
+        <a href="https://www.khanacademy.org/science/physics/one-dimensional-motion/displacement-velocity-time/a/what-is-displacement" class="resource-link" target="_blank">
+            <i data-lucide="external-link"></i>Khan Academy: Vector Basics
+        </a>
+        <a href="https://phet.colorado.edu/sims/html/vector-addition/latest/vector-addition_en.html" class="resource-link" target="_blank">
+            <i data-lucide="play-circle"></i>PhET: Vector Addition Simulation
+        </a>
+        <a href="https://www.physicsclassroom.com/class/vectors" class="resource-link" target="_blank">
+            <i data-lucide="book"></i>Physics Classroom: Vectors
+        </a>
+        <a href="https://www.wolframalpha.com/widgets/gallery/view.jsp?id=8ab70731b1553f17c11a3bbc87e0b605" class="resource-link" target="_blank">
+            <i data-lucide="calculator"></i>Vector Calculator
+        </a>
+    </div>
+</div>
+
+---TOPIC---
+kinematics|Kinematics|rocket
+<h2>Kinematics: Describing Motion</h2>
+<p>Kinematics is the part of physics that describes <strong>how</strong> things move, without worrying about <strong>why</strong> they move. We'll focus on position, velocity, and acceleration - the fundamental concepts that describe all motion in the universe.</p>
+
+<div class="video-container">
+    <iframe src="https://www.youtube.com/embed/ZM8ECpBuQYE" title="Introduction to Kinematics - Khan Academy"></iframe>
+</div>
+
+<h3>Understanding Motion: The Big Picture</h3>
+<p>Motion is everywhere! From the molecules vibrating in your coffee cup to galaxies spinning through space, everything in the universe is in motion. Kinematics gives us the mathematical tools to describe and predict this motion precisely.</p>
+
+<div class="example-box">
+    <h4><i data-lucide="lightbulb"></i>Motion in Daily Life</h4>
+    <p>Consider your morning commute:</p>
+    <ul class="list-disc list-inside ml-4">
+        <li><strong>Walking to your car:</strong> Constant velocity motion</li>
+        <li><strong>Accelerating from a stop sign:</strong> Uniformly accelerated motion</li>
+        <li><strong>Braking for a red light:</strong> Deceleration (negative acceleration)</li>
+        <li><strong>Dropping your keys:</strong> Free fall motion</li>
+    </ul>
+    <p>Each of these scenarios follows predictable mathematical patterns that we can analyze and predict!</p>
+</div>
+
+<h3>Keywords & Key Variables</h3>
+<div class="topic-grid">
+    <div class="grid-item">
+        <h4>Keywords</h4>
+        <ul class="list-disc list-inside">
+            <li><strong>Kinematics:</strong> The study of motion without considering the forces that cause it.</li>
+            <li><strong>Position (r):</strong> Where an object is located in space relative to a reference point.</li>
+            <li><strong>Displacement (Δr):</strong> The change in position from start to finish (a vector). It's the straight-line distance and direction, not the total path traveled.</li>
+            <li><strong>Distance:</strong> The total length of the path traveled (always positive, a scalar).</li>
+            <li><strong>Velocity (v):</strong> How fast and in what direction you're going (a vector). Average vs. instantaneous!</li>
+            <li><strong>Speed:</strong> How fast you're going without regard to direction (always positive, a scalar).</li>
+            <li><strong>Acceleration (a):</strong> Any change in velocity. You can accelerate by speeding up, slowing down, or just changing direction.</li>
+            <li><strong>Free Fall:</strong> The motion of an object when the only force acting on it is gravity.</li>
+            <li><strong>Projectile:</strong> An object flying through the air (like a ball) under the influence of gravity.</li>
+        </ul>
+    </div>
+    <div class="grid-item">
+        <h4>Key Variables</h4>
+        <ul class="list-disc list-inside">
+            <li>$\\vec{r}, x, y, z$: Position vectors and coordinates.</li>
+            <li>$\\Delta\\vec{r}, \\Delta x$: Displacement (change in position).</li>
+            <li>$s$: Distance traveled along the path.</li>
+            <li>$\\vec{v}$: Velocity ($v_i$ or $v_0$ is initial, $v_f$ is final).</li>
+            <li>$\\vec{a}$: Acceleration (constant in most introductory problems).</li>
+            <li>$t$: Time (always flows forward!).</li>
+            <li>$g$: Acceleration due to gravity ($9.81 m/s^2$ near Earth's surface).</li>
+        </ul>
+    </div>
+</div>
+
+<div class="interactive-demo">
+    <h4><i data-lucide="play-circle"></i>Interactive Motion Simulator</h4>
+    <p>Adjust the initial velocity and acceleration to see how objects move!</p>
+    <div class="canvas-container">
+        <canvas id="motionCanvas" width="500" height="200" style="border: 2px solid var(--accent-blue); border-radius: 0.5rem; background-color: var(--bg-dark);"></canvas>
+    </div>
+    <div class="demo-controls">
+        <label style="color: white; margin-right: 1rem;">Initial Velocity: <input type="range" id="velocitySlider" min="-50" max="50" value="20" style="margin-left: 0.5rem;"></label>
+        <label style="color: white; margin-right: 1rem;">Acceleration: <input type="range" id="accelerationSlider" min="-20" max="20" value="-9.8" style="margin-left: 0.5rem;"></label>
+        <button class="demo-button" onclick="startMotion()">Start</button>
+        <button class="demo-button" onclick="resetMotion()">Reset</button>
+    </div>
+</div>
+
+<h3>Graphical Analysis of 1D Motion</h3>
+<p>Graphs are not just pretty pictures - they're powerful tools that reveal the story of an object's motion. Learning to read kinematic graphs is like learning to read the language of motion itself!</p>
+
+<div class="topic-grid">
+    <div class="grid-item">
+        <h4>Position vs. Time Graph</h4>
+        <p>The <strong>slope</strong> of a position-time graph tells you the object's velocity:</p>
+        <ul class="list-disc list-inside ml-4">
+            <li><strong>Horizontal line (slope = 0):</strong> Object is at rest</li>
+            <li><strong>Straight sloped line:</strong> Constant velocity</li>
+            <li><strong>Curved line:</strong> Changing velocity (acceleration present)</li>
+            <li><strong>Steeper slope:</strong> Higher speed</li>
+        </ul>
+        <div class="graph-container"><canvas id="positionTimeChart"></canvas></div>
+    </div>
+    <div class="grid-item">
+        <h4>Velocity vs. Time Graph</h4>
+        <p>This is the most informative kinematic graph!</p>
+        <ul class="list-disc list-inside ml-4">
+            <li><strong>Slope:</strong> Gives you acceleration</li>
+            <li><strong>Area under the curve:</strong> Gives you displacement</li>
+            <li><strong>Horizontal line:</strong> Constant velocity (zero acceleration)</li>
+            <li><strong>Straight sloped line:</strong> Constant acceleration</li>
+        </ul>
+        <div class="graph-container"><canvas id="velocityTimeChart"></canvas></div>
+    </div>
+</div>
+
+<h3>The Kinematic Equations: Your Problem-Solving Toolkit</h3>
+<p>When an object's acceleration is constant, these four equations are your master keys to solving any motion problem. Each equation connects different variables - choose the one that has three known quantities and one unknown!</p>
+
+<div class="simulation-container">
+    <h4><i data-lucide="calculator"></i>The Big Four Kinematic Equations</h4>
+    <div class="topic-grid">
+        <div class="grid-item">
+            <h4>Equation 1: Velocity-Time</h4>
+            $$ v_f = v_i + at $$
+            <p><strong>Use when:</strong> You don't need to know displacement</p>
+            <p><strong>Missing variable:</strong> displacement (Δx)</p>
+        </div>
+        <div class="grid-item">
+            <h4>Equation 2: Displacement-Time</h4>
+            $$ \\Delta x = v_i t + \\frac{1}{2}at^2 $$
+            <p><strong>Use when:</strong> You don't need final velocity</p>
+            <p><strong>Missing variable:</strong> final velocity (v_f)</p>
+        </div>
+    </div>
+    <div class="topic-grid">
+        <div class="grid-item">
+            <h4>Equation 3: The "Timeless" Equation</h4>
+            $$ v_f^2 = v_i^2 + 2a\\Delta x $$
+            <p><strong>Use when:</strong> Time is unknown or not needed</p>
+            <p><strong>Missing variable:</strong> time (t)</p>
+        </div>
+        <div class="grid-item">
+            <h4>Equation 4: Average Velocity</h4>
+            $$ \\Delta x = \\frac{v_i + v_f}{2} \\cdot t $$
+            <p><strong>Use when:</strong> You don't need acceleration</p>
+            <p><strong>Missing variable:</strong> acceleration (a)</p>
+        </div>
+    </div>
+</div>
+
+<h3>Projectile Motion: Motion in 2D</h3>
+<p>When you throw a ball, it follows a curved path called a parabola. The secret to understanding projectile motion is to analyze the horizontal and vertical components separately!</p>
+
+<div class="example-box">
+    <h4><i data-lucide="lightbulb"></i>Key Insights for Projectile Motion</h4>
+    <ul class="list-disc list-inside ml-4">
+        <li><strong>Horizontal motion:</strong> No acceleration (ignoring air resistance), so velocity is constant</li>
+        <li><strong>Vertical motion:</strong> Constant acceleration due to gravity (g = -9.81 m/s²)</li>
+        <li><strong>Time of flight:</strong> Determined entirely by vertical motion</li>
+        <li><strong>Range:</strong> Depends on both initial speed and launch angle</li>
+        <li><strong>Maximum range:</strong> Achieved at 45° launch angle (in a vacuum)</li>
+    </ul>
+</div>
+
+<div class="practice-problem">
+    <h4><i data-lucide="brain"></i>Practice Problem: Free Fall</h4>
+    <p><strong>Problem:</strong> A ball is dropped from a height of 20 meters. How long does it take to hit the ground, and what is its velocity just before impact?</p>
+    <p><strong>Given:</strong> h = 20 m, v₀ = 0 (dropped), a = g = 9.81 m/s²</p>
+    <p><strong>Solution:</strong></p>
+    <ol class="list-decimal list-inside ml-4">
+        <li>Find time: Using Δy = v₀t + ½at²</li>
+        <li>-20 = 0 + ½(-9.81)t²</li>
+        <li>t² = 40/9.81 = 4.08 s²</li>
+        <li>t = 2.02 seconds</li>
+        <li>Find final velocity: v_f = v₀ + at = 0 + (-9.81)(2.02) = -19.8 m/s</li>
+    </ol>
+    <p><strong>Answer:</strong> It takes 2.02 seconds, and the ball hits the ground at 19.8 m/s downward.</p>
+</div>
+
+<div class="learning-resources">
+    <h4><i data-lucide="book-open"></i>Additional Learning Resources</h4>
+    <div class="resource-links">
+        <a href="https://www.khanacademy.org/science/physics/one-dimensional-motion" class="resource-link" target="_blank">
+            <i data-lucide="external-link"></i>Khan Academy: 1D Motion
+        </a>
+        <a href="https://phet.colorado.edu/sims/html/projectile-motion/latest/projectile-motion_en.html" class="resource-link" target="_blank">
+            <i data-lucide="play-circle"></i>PhET: Projectile Motion Sim
+        </a>
+        <a href="https://www.physicsclassroom.com/class/1DKin" class="resource-link" target="_blank">
+            <i data-lucide="book"></i>Physics Classroom: Kinematics
+        </a>
+        <a href="https://www.desmos.com/calculator/u8c5ck1ys3" class="resource-link" target="_blank">
+            <i data-lucide="trending-up"></i>Desmos: Kinematic Graphs
+        </a>
+    </div>
+</div>
+
+---TOPIC---
+dynamics|Dynamics: Newton's Laws|mountain
+<h2>Dynamics: Newton's Laws of Motion</h2>
+<p>Now we get to the "why" of motion. Dynamics is the study of forces and how they cause objects to accelerate. The foundation of this entire topic is Isaac Newton's three simple, yet profound, laws.</p>
+
+<h3>Keywords & Key Variables</h3>
+<div class="topic-grid">
+    <div class="grid-item">
+        <h4>Keywords</h4>
+        <ul class="list-disc list-inside">
+            <li><strong>Dynamics:</strong> The study of what causes motion (forces!).</li>
+            <li><strong>Force:</strong> A push or a pull on an object. It's a vector.</li>
+            <li><strong>Inertia:</strong> An object's natural resistance to changing its state of motion. "Things like to keep doing what they're already doing." Mass is a measure of inertia.</li>
+            <li><strong>Net Force ($\\sum F$):</strong> The vector sum of ALL forces acting on a single object. This is what truly matters.</li>
+            <li><strong>Friction:</strong> A force that opposes motion or attempted motion between surfaces.</li>
+            <li><strong>Normal Force:</strong> The support force from a surface, always pushing perpendicular to that surface.</li>
+        </ul>
+    </div>
+    <div class="grid-item">
+        <h4>Key Variables</h4>
+        <ul class="list-disc list-inside">
+            <li>$\\vec{F}$: Force (Unit: Newtons, N).</li>
+            <li>$m$: Mass (Unit: kilograms, kg).</li>
+            <li>$\\vec{a}$: Acceleration (Unit: m/s²).</li>
+            <li>$\\vec{N}$: Normal Force.</li>
+            <li>$\\vec{T}$: Tension (the force from a rope or string).</li>
+            <li>$\\vec{f}$: Friction force ($f_s$ for static/not moving, $f_k$ for kinetic/moving).</li>
+            <li>$\\mu$: Coefficient of friction (a number describing how "rough" surfaces are).</li>
+        </ul>
+    </div>
+</div>
+
+<h3>Newton's Three Laws of Motion</h3>
+<p><strong>1. Law of Inertia:</strong> An object at rest stays at rest, and an object in motion stays in motion with the same speed and in the same direction, UNLESS acted upon by a net external force. (If $\\sum \\vec{F} = 0$, then $\\vec{a} = 0$).</p>
+<p><strong>2. Law of Acceleration:</strong> The acceleration of an object is directly proportional to the net force and inversely proportional to its mass. This is the most famous equation in physics!</p>
+$$ \\sum \\vec{F} = m\\vec{a} $$
+<p>In simple terms: More force means more acceleration. More mass means less acceleration for the same push.</p>
+<p><strong>3. Law of Action-Reaction:</strong> For every action, there is an equal and opposite reaction. If object A pushes on object B, then object B pushes back on object A with a force that is equal in magnitude and opposite in direction.</p>
+$$ \\vec{F}_{A \\text{ on } B} = -\\vec{F}_{B \\text{ on } A} $$
+
+<div class="info-box pitfall-box">
+    <h4><i data-lucide="alert-triangle"></i>Common Pitfall: Action-Reaction Pairs</h4>
+    <p class="mt-2">A crucial detail about the 3rd Law: the action and reaction forces <strong>always act on different objects</strong>. They NEVER cancel each other out. Your weight is the Earth pulling you down. The reaction force is YOU pulling the Earth up! The normal force from the floor pushing up on your feet is the reaction to your feet pushing down on the floor. Don't mix them up!</p>
+</div>
+
+---TOPIC---
+work|Work, Energy, and Power|bolt
+<h2>Work, Energy, and Power</h2>
+<p>Energy is one of the most fundamental concepts in all of science. Think of it as the "currency" that makes things happen. Work is the process of transferring that energy, and Power is how fast you transfer it.</p>
+
+<h3>Keywords & Key Variables</h3>
+<div class="topic-grid">
+    <div class="grid-item">
+        <h4>Keywords</h4>
+        <ul class="list-disc list-inside">
+            <li><strong>Work:</strong> The transfer of energy when a force causes an object to move a certain distance. If nothing moves, no work is done!</li>
+            <li><strong>Kinetic Energy ($K$):</strong> The energy of motion. Faster and heavier objects have more kinetic energy.</li>
+            <li><strong>Potential Energy ($U$):</strong> Stored energy. It could be stored in an object's height (gravitational) or in a stretched spring (elastic).</li>
+            <li><strong>Conservative Force:</strong> A force like gravity, where the work done doesn't depend on the path taken, only the start and end points. These forces have potential energies associated with them.</li>
+            <li><strong>Power:</strong> The rate at which energy is transferred (or work is done).</li>
+        </ul>
+    </div>
+    <div class="grid-item">
+        <h4>Key Variables</h4>
+        <ul class="list-disc list-inside">
+            <li>$W$: Work (Unit: Joules, J).</li>
+            <li>$K$: Kinetic Energy (Unit: Joules, J).</li>
+            <li>$U$: Potential Energy (Unit: Joules, J).</li>
+            <li>$E$: Total Mechanical Energy ($E = K+U$).</li>
+            <li>$P$: Power (Unit: Watts, W).</li>
+            <li>$k$: Spring constant (how stiff a spring is).</li>
+        </ul>
+    </div>
+</div>
+
+<h3>Work and the Work-Energy Theorem</h3>
+<p>Work is the bridge connecting forces and energy. The <strong>Work-Energy Theorem</strong> is a powerful shortcut: it says that the total work done by all forces on an object equals the change in its kinetic energy. </p>
+$$ W_{net} = \\Delta K = K_f - K_i $$
+<p>So, if you do positive work, the object speeds up. If you do negative work, it slows down.</p>
+
+<h3>Conservation of Mechanical Energy</h3>
+<p>This is a HUGE idea in physics. If the only forces doing work are conservative (like gravity or spring forces, but NOT friction), then the total mechanical energy of a system doesn't change. It just transforms between kinetic and potential energy.</p>
+$$ E_i = E_f \\implies K_i + U_i = K_f + U_f $$
+<p>Think of a rollercoaster: at the top of a hill, it's mostly potential energy. As it rushes down, that potential energy converts into kinetic energy (speed)!</p>
+<p>If non-conservative forces like friction are present, energy isn't conserved (it turns into heat): $$W_{nc} = \\Delta E$$.</p>
+
+<h3>Power</h3>
+<p>Power is all about how fast you get work done. Lifting a heavy box quickly requires more power than lifting it slowly, even though the work done is the same.</p>
+$$ P_{avg} = \\frac{W}{t} \\quad \\text{or instantaneously,} \\quad P = \\vec{F} \\cdot \\vec{v} $$
+
+---TOPIC---
+momentum|Impulse, Momentum & Collisions|git-commit-horizontal
+<h2>Impulse, Momentum, and Collisions</h2>
+<p>Why does a small, fast bullet have a huge impact? Why do you follow through when hitting a baseball? The answers lie in momentum—a concept so important, we call it a "conserved" quantity.</p>
+
+<h3>Keywords & Key Variables</h3>
+<div class="topic-grid">
+    <div class="grid-item">
+        <h4>Keywords</h4>
+        <ul class="list-disc list-inside">
+            <li><strong>Momentum ($\vec{p}$):</strong> Often called "mass in motion." It's a measure of how hard it is to stop a moving object. It's a vector.</li>
+            <li><strong>Impulse ($\vec{J}$):</strong> The change in an object's momentum. An impulse is delivered by a force acting over a period of time.</li>
+            <li><strong>Elastic Collision:</strong> A collision where objects bounce off each other perfectly, and no kinetic energy is lost.</li>
+            <li><strong>Inelastic Collision:</strong> A collision where kinetic energy is lost (usually to heat, sound, or deformation). A "perfectly inelastic" collision is when the objects stick together.</li>
+            <li><strong>Center of Mass:</strong> The "average" position of all the mass in a system. For an isolated system, the center of mass moves at a constant velocity, no matter how complex the collisions are within it.</li>
+        </ul>
+    </div>
+    <div class="grid-item">
+        <h4>Key Variables</h4>
+        <ul class="list-disc list-inside">
+            <li>$\\vec{p} = m\\vec{v}$: Linear momentum.</li>
+            <li>$\\vec{J} = \\vec{F}_{avg} \\Delta t = \\Delta\\vec{p}$: Impulse.</li>
+            <li>$m$: Mass.</li>
+            <li>$\\vec{v}$: Velocity.</li>
+        </ul>
+    </div>
+</div>
+
+<h3>Impulse and Conservation of Momentum</h3>
+<p>The relationship between impulse and momentum is key: $$ \\vec{J} = \\Delta \\vec{p} $$. To change an object's momentum, you need to apply a force over a certain time. This is why airbags work: they increase the time of impact, which decreases the force on the driver for the same change in momentum.</p>
+<p>The <strong>Law of Conservation of Momentum</strong> is a cornerstone of physics. It states that for any interaction (like a collision or explosion), if there are no external forces on the system, the total momentum before the event is equal to the total momentum after the event. </p>
+$$ \\sum \\vec{p}_{initial} = \\sum \\vec{p}_{final} $$
+<p><strong>This law is your master key to solving ALL collision problems.</strong> In any collision, momentum is conserved. Energy is only conserved in elastic collisions.</p>
+
+---TOPIC---
+rotation|Rotational Motion|rotate-cw
+<h2>Rotational Equilibrium and Dynamics</h2>
+<p>So far, we've treated objects as points. But what happens when things spin, tumble, or roll? This is where we learn the physics of rotation. The cool part? Almost every concept from linear motion has a direct rotational equivalent.</p>
+
+<h3>Keywords & Key Variables</h3>
+<div class="topic-grid">
+    <div class="grid-item">
+        <h4>Keywords</h4>
+        <ul class="list-disc list-inside">
+            <li><strong>Torque ($\tau$):</strong> The rotational version of force. It's a "twist" or "turn" caused by a force applied at a distance from a pivot.</li>
+            <li><strong>Moment of Inertia ($I$):</strong> The rotational version of mass. It's an object's resistance to being spun. It depends not just on mass, but on how that mass is distributed.</li>
+            <li><strong>Angular Momentum ($L$):</strong> The rotational version of linear momentum. It's a measure of an object's "quantity of spin."</li>
+            <li><strong>Rotational Equilibrium:</strong> The state where an object is not rotating or is rotating at a constant rate. This happens when the net torque is zero.</li>
+        </ul>
+    </div>
+    <div class="grid-item">
+        <h4>Key Variables (Linear $\\rightarrow$ Rotational)</h4>
+        <ul class="list-disc list-inside">
+            <li>$x, v, a \\rightarrow \\theta, \\omega, \\alpha$: (Angular position, velocity, acceleration)</li>
+            <li>$F \\rightarrow \\tau$: (Force $\\rightarrow$ Torque)</li>
+            <li>$m \\rightarrow I$: (Mass $\\rightarrow$ Moment of Inertia)</li>
+            <li>$p \\rightarrow L$: (Momentum $\\rightarrow$ Angular Momentum)</li>
+            <li>$r$: Lever arm/radius.</li>
+        </ul>
+    </div>
+</div>
+
+<h3>Torque and Moment of Inertia</h3>
+<p><strong>Torque</strong> is not just about how hard you push, but also *where* you push. Pushing on a door far from its hinges creates more torque and is easier than pushing near the hinges. The formula is $$ \\vec{\\tau} = \\vec{r} \\times \\vec{F} $$, where $\\vec{r}$ is the vector from the pivot to where the force is applied.</p>
+<p>Just like Newton's second law for linear motion ($F=ma$), there's a version for rotation:</p>
+$$ \\sum \\vec{\\tau} = I\\vec{\\alpha} $$
+<p>This says that a net torque causes an angular acceleration. The <strong>Moment of Inertia ($I$)</strong> tells you how much the object resists this. An object with its mass far from the center (like a big wheel) has a large $I$ and is hard to spin. An object with its mass close to the center (like a solid disk) has a smaller $I$ and is easier to spin.</p>
+<p>The <strong>Parallel Axis Theorem</strong> is a handy tool to calculate $I$ if you're spinning an object around a point other than its center of mass: $$I = I_{CM} + Md^2$$.</p>
+
+---TOPIC---
+gravity|Universal Gravitation|globe
+<h2>Universal Gravitation</h2>
+<p>Newton realized that the same force that makes an apple fall from a tree is the one that keeps the Moon in orbit around the Earth. Gravity is a universal force: every object with mass pulls on every other object with mass, everywhere in the universe.</p>
+
+<h3>Keywords & Key Variables</h3>
+<div class="topic-grid">
+    <div class="grid-item">
+        <h4>Keywords</h4>
+        <ul class="list-disc list-inside">
+            <li><strong>Gravitational Field:</strong> The area of influence around a massive object. You can think of it as the object warping the space around it.</li>
+            <li><strong>Kepler's Laws:</strong> Three laws, discovered before Newton, that perfectly describe the motion of planets (e.g., orbits are ellipses). Newton's law of gravity explains *why* these laws are true.</li>
+            <li><strong>Orbital Mechanics:</strong> The study of how objects (like satellites and planets) move in orbits.</li>
+            <li><strong>Escape Velocity:</strong> The minimum speed an object needs to completely escape a planet's gravitational pull and never come back.</li>
+        </ul>
+    </div>
+    <div class="grid-item">
+        <h4>Key Variables</h4>
+        <ul class="list-disc list-inside">
+            <li>$\\vec{F}_g$: Gravitational Force.</li>
+            <li>$G$: The Universal Gravitational Constant (a very small number).</li>
+            <li>$m, M$: The two masses that are attracting each other.</li>
+            <li>$r$: The distance between the centers of the two masses.</li>
+            <li>$\\vec{g}$: Gravitational field strength (on Earth's surface, this is $9.8$ N/kg or $9.8$ m/s²).</li>
+            <li>$T$: Orbital Period (the time for one full orbit).</li>
+        </ul>
+    </div>
+</div>
+
+<h3>Newton's Law of Universal Gravitation</h3>
+<p>The force of gravity depends on two things: how massive the objects are, and how far apart they are. The force is stronger for more massive objects, and gets much weaker as the objects get farther apart (an inverse square law).</p>
+$$ F_g = G \\frac{m_1 m_2}{r^2} $$
+
+<h3>Escape Velocity</h3>
+<p>To escape a planet's gravity, you need to be going fast enough that its pull can't bring you back down. This happens when your initial kinetic energy is equal to the gravitational potential energy holding you there. For Earth, this speed is about 11.2 km/s (over 40,000 km/h)!</p>
+$$ v_{esc} = \\sqrt{\\frac{2GM}{R}} $$
+<p>Notice that the escape velocity depends on the planet's mass ($M$) and radius ($R$), but not on the mass of the object that is escaping.</p>
+
+---TOPIC---
+periodic|Periodic Motion|circle-dot
+<h2>Periodic Motion</h2>
+<p>Periodic motion is any motion that repeats itself in a regular cycle, like a swinging pendulum, a bouncing spring, or the hands of a clock. The most fundamental type of this motion is called Simple Harmonic Motion (SHM).</p>
+
+<h3>Keywords & Key Variables</h3>
+<div class="topic-grid">
+    <div class="grid-item">
+        <h4>Keywords</h4>
+        <ul class="list-disc list-inside">
+            <li><strong>Simple Harmonic Motion (SHM):</strong> A special kind of oscillation where the restoring force is directly proportional to the displacement from equilibrium. In simple terms: the further you pull it, the harder it pulls back.</li>
+            <li><strong>Amplitude (A):</strong> The maximum distance the object moves from its equilibrium (center) position.</li>
+            <li><strong>Period (T):</strong> The time it takes to complete one full cycle of motion.</li>
+            <li><strong>Frequency (f):</strong> How many cycles happen per second (measured in Hertz, Hz). $f = 1/T$.</li>
+            <li><strong>Resonance:</strong> The phenomenon where pushing an oscillating system at its natural frequency causes the amplitude to grow dramatically. This is how you pump a swing higher and higher.</li>
+        </ul>
+    </div>
+    <div class="grid-item">
+        <h4>Key Variables</h4>
+        <ul class="list-disc list-inside">
+            <li>$A$: Amplitude.</li>
+            <li>$\\omega$: Angular Frequency ($= 2\\pi f$). It's a way to measure frequency in radians per second.</li>
+            <li>$\\phi$: Phase Constant (tells you the starting position of the cycle at $t=0$).</li>
+            <li>$T$: Period.</li>
+            <li>$f$: Frequency.</li>
+            <li>$k$: Spring constant.</li>
+        </ul>
+    </div>
+</div>
+
+<h3>Simple Harmonic Motion (SHM)</h3>
+<p>SHM is the blueprint for all things that vibrate. The defining feature is Hooke's Law: the restoring force tries to bring the object back to the middle, and this force gets stronger the farther the object is from the middle ($F_{restore} = -kx$).</p>
+<p>The motion of an object in SHM can be perfectly described by a cosine (or sine) function:</p>
+$$ x(t) = A \\cos(\\omega t + \\phi) $$
+<p>This equation might look complex, but it's just a mathematical way of saying the object wiggles back and forth between $+A$ and $-A$ in a smooth, repeating pattern.</p>
+
+---TOPIC---
+waves|Mechanical Waves and Sound|waves
+<h2>Mechanical Waves and Sound</h2>
+<p>A wave is a fascinating thing: it's a disturbance that travels through a medium (like air, water, or a string), carrying energy from one place to another without any net movement of the medium itself. Think of "the wave" in a stadium—people move up and down, but the wave travels around the stadium.</p>
+
+<h3>Keywords & Key Variables</h3>
+<div class="topic-grid">
+    <div class="grid-item">
+        <h4>Keywords</h4>
+        <ul class="list-disc list-inside">
+            <li><strong>Wave:</strong> A traveling disturbance of energy.</li>
+            <li><strong>Wavelength ($\lambda$):</strong> The distance from one peak of the wave to the next peak.</li>
+            <li><strong>Superposition:</strong> When two waves meet, they pass through each other. Their displacements simply add together at every point.</li>
+            <li><strong>Interference:</strong> The result of superposition. It can be <strong>constructive</strong> (waves add up to make a bigger wave) or <strong>destructive</strong> (waves cancel each other out).</li>
+            <li><strong>Doppler Effect:</strong> The apparent change in a wave's frequency because of motion between the source and the observer.</li>
+        </ul>
+    </div>
+    <div class="grid-item">
+        <h4>Key Variables</h4>
+        <ul class="list-disc list-inside">
+            <li>$v$: Wave Speed.</li>
+            <li>$f$: Frequency (how many wave crests pass per second).</li>
+            <li>$\\lambda$: Wavelength (the distance between crests).</li>
+            <li>$k$: Wave Number ($k = 2\\pi/\\lambda$).</li>
+            <li>$I$: Intensity (Power per unit area, related to loudness).</li>
+            <li>$\\beta$: Sound Level (what we measure in decibels, dB).</li>
+        </ul>
+    </div>
+</div>
+
+<h3>Wave Properties</h3>
+<p>There's a simple, fundamental relationship that connects the speed, frequency, and wavelength of any wave. The speed of a wave is determined by the properties of the medium it's traveling through (like the tension in a string or the temperature of the air).</p>
+$$ v = f\\lambda $$
+
+<h3>The Doppler Effect</h3>
+<p>This is the classic "siren effect." When an ambulance is racing towards you, the sound waves get bunched up, so you hear a higher frequency (higher pitch). When it's racing away, the waves get stretched out, so you hear a lower frequency (lower pitch). The same thing happens with light from distant stars!</p>
+$$ f' = f \\left( \\frac{v_{sound} \\pm v_{observer}}{v_{sound} \\mp v_{source}} \\right) $$
+<p>The signs depend on whether the source and observer are moving towards or away from each other. The general rule is: use the top sign for "towards" motion.</p>
+
+---TOPIC---
+thermo|Thermodynamics|thermometer
+<h2>Thermodynamics</h2>
+<p>Thermodynamics is the science of heat, work, and the transformation of energy. It governs everything from engines and refrigerators to the chemistry of life itself. Its laws are some of the most powerful and universal in all of physics.</p>
+
+<h3>Keywords & Key Variables</h3>
+<div class="topic-grid">
+    <div class="grid-item">
+        <h4>Keywords</h4>
+        <ul class="list-disc list-inside">
+            <li><strong>Heat (Q):</strong> Energy that is transferred from a hotter object to a colder one simply because of their temperature difference.</li>
+            <li><strong>Internal Energy (U):</strong> The grand total of all the microscopic kinetic and potential energies of the atoms and molecules inside a system.</li>
+            <li><strong>Entropy (S):</strong> A measure of a system's disorder or randomness. The Second Law says that the entropy of the universe is always increasing.</li>
+            <li><strong>Heat Engine:</strong> Any device that takes in heat from a hot source, converts some of it into useful work, and expels the rest to a cold sink.</li>
+            <li><strong>Isothermal:</strong> A process that happens at a constant temperature.</li>
+            <li><strong>Adiabatic:</strong> A process where no heat is allowed to enter or leave the system ($Q=0$).</li>
+        </ul>
+    </div>
+    <div class="grid-item">
+        <h4>Key Variables</h4>
+        <ul class="list-disc list-inside">
+            <li>$U$: Internal Energy.</li>
+            <li>$Q$: Heat.</li>
+            <li>$W$: Work.</li>
+            <li>$T$: Temperature (in Kelvin!).</li>
+            <li>$S$: Entropy.</li>
+            <li>$\\eta$ (eta): Efficiency of an engine.</li>
+        </ul>
+    </div>
+</div>
+
+<h3>The Laws of Thermodynamics</h3>
+<p><strong>First Law: Conservation of Energy.</strong> This is a restatement of energy conservation, but for thermodynamic systems. It says that the change in a system's internal energy ($\Delta U$) is equal to the heat added to the system ($Q$) minus the work done by the system ($W$).</p>
+$$ \\Delta U = Q - W $$
+<p>In short: energy can't be created or destroyed, only moved around or changed in form.</p>
+<p><strong>Second Law: The Law of Increasing Entropy.</strong> This law has many forms, but they all point to one thing: disorder wins. Heat naturally flows from hot to cold, not the other way around. No engine can be 100% efficient because some energy is always lost as waste heat, increasing the universe's overall entropy.</p>
+
+<h3>Heat Engines</h3>
+<p>A heat engine is a practical application of thermodynamics. It uses the natural flow of heat from a high-temperature source to a low-temperature "sink" to perform work. The Second Law places a hard limit on how efficient an engine can be. The theoretical maximum efficiency is called the Carnot efficiency:</p>
+$$ \\eta_{Carnot} = 1 - \\frac{T_C}{T_H} $$
+<p>This shows that a bigger temperature difference between the hot and cold reservoirs leads to a higher possible efficiency.</p>

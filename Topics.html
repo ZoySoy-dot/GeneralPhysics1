@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
+    <title>General Physics 1 Learning Hub</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- KaTeX for LaTeX Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0KOVEMcAypIl+BcoAstjKafA-e5vs3J6whXXHdQ3emkMK2rQfedOg" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Chart.js for Graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Matter.js for Physics Simulations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    
+    <!-- Three.js for 3D Visualizations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- P5.js for Interactive Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="flex flex-col lg:flex-row h-screen bg-gray-900">
+
+    <!-- Mobile Header -->
+    <header class="lg:hidden bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 p-4 flex items-center justify-between sticky top-0 z-50">
+        <div class="flex items-center">
+            <i data-lucide="atom" class="text-blue-400 w-8 h-8 mr-2"></i>
+            <h1 class="text-lg font-bold text-white">GenPhysics 1</h1>
+        </div>
+        <button id="mobile-menu-button" class="text-white p-2 rounded-lg hover:bg-gray-700 transition-colors">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="
+        fixed lg:static top-0 left-0 z-40 h-full
+        w-80 max-w-[85vw] lg:w-80 lg:max-w-none
+        bg-gray-900/95 lg:bg-gray-900/80 backdrop-blur-sm 
+        p-4 overflow-y-auto flex-shrink-0 
+        border-r border-gray-700
+        transform -translate-x-full lg:translate-x-0
+        transition-transform duration-300 ease-in-out
+    ">
+        <!-- Desktop Header (hidden on mobile) -->
+        <div class="hidden lg:flex items-center mb-6">
+            <i data-lucide="atom" class="text-blue-400 w-10 h-10 mr-3"></i>
+            <h1 class="text-2xl font-bold text-white">GenPhysics 1 Hub</h1>
+        </div>
+
+        <!-- Mobile Close Button -->
+        <div class="lg:hidden flex items-center justify-between mb-6">
+            <div class="flex items-center">
+                <i data-lucide="atom" class="text-blue-400 w-8 h-8 mr-2"></i>
+                <h1 class="text-xl font-bold text-white">Navigation</h1>
+            </div>
+            <button id="close-menu-button" class="text-white p-2 rounded-lg hover:bg-gray-700 transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <nav id="nav-menu" class="space-y-2">
+            <!-- Navigation links will be injected here by JavaScript -->
+        </nav>
+    </aside>
+
+    <!-- Sidebar Overlay for Mobile -->
+    <div id="sidebar-overlay" class="
+        fixed inset-0 bg-black bg-opacity-50 z-30
+        lg:hidden opacity-0 pointer-events-none
+        transition-opacity duration-300 ease-in-out
+    "></div>
+
+    <!-- Main Content Area -->
+    <main id="main-content" class="
+        flex-1 overflow-y-auto
+        p-4 sm:p-6 lg:p-8 xl:p-12
+        min-h-0
+    ">
+        <!-- Topic content will be loaded here by JavaScript -->
+        <div class="content-area max-w-none">
+            <h2>Loading...</h2>
+            <p>Please wait while the content loads.</p>
+        </div>
+    </main>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
